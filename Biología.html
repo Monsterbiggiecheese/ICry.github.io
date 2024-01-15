@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBkZSUyMGxhJTIwYmlibGlvdGVjYXxlbnwwfHwwfHx8MA%3D%3D');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-weight: 400;
+            font-size: 50px;
+            margin-left: 10px;
+        }
+
+        .libro {
+            width: 50%;
+            max-width: 600px;
+            border-bottom: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: block;
+            margin: auto;
+
+        }
+
+        .libro img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+            margin: auto;
+        }
+
+        .libro a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+
+        .libro a:hover {
+            background-color: #dddddd;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            padding: 20px 0;
+            background-color: none;
+            margin: 0;
+        }
+
+        .libro a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .libro a:hover {
+            background-color: #ddd;
+        }
+
+        input#searchInput {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+    <style>.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container .btn-menu,
+.logo {
+    float: left;
+    line-height: 100px;
+}
+
+.container .btn-menu label {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.logo h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}</style>
+    <script>
+        function searchBooks() {
+            var input, filter, libros, libro, a, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            libros = document.getElementsByClassName("libro");
+
+            for (i = 0; i < libros.length; i++) {
+                libro = libros[i];
+                a = libro.getElementsByTagName("h2")[0];
+                txtValue = a.textContent || a.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    libro.style.display = "";
+                } else {
+                    libro.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    
+
+    <h1>Biología</h1>
+    <input type="text" id="searchInput" onkeyup="searchBooks()" placeholder="Buscar libros">
+
+    <div class="libro">
+        <div>
+            <img src="https://3.bp.blogspot.com/-PU8oQS0jy3M/W2sKnlhJ9wI/AAAAAAAAADU/nwdSquHxBGw1moJocEarxB9A8PJUyKgYQCEwYBhgL/s1600/portada-compendio-biologia_para-panoles.jpg" alt="Libro 1">
+            <h2>Biología lumbreras</h2>
+        </div>
+        <a href="https://drive.google.com/file/d/1QO1m9jLEqlhlC6vQs0ZGfyuAWl1ugHyI/view?usp=drive_link">Ver libro</a>
+    </div>
+
+    <div class="libro">
+        <div>
+            <img src="https://2.bp.blogspot.com/-kyoiBE_lo9Y/W6qFpF0vsyI/AAAAAAAAFTU/PYZ7FiufoXMhSZyOTQ10Jg5RSwoKt2jmgCLcBGAs/s1600/Biolog%25C3%25ADa%2BQuinta%2BEdici%25C3%25B3n%2BDe%2BLa%2BPre%2BSan%2BMarcos.jpg" alt="Libro 2">
+            <h2>Biología Pre San Marcos</h2>
+        </div>
+        <a href="https://drive.google.com/file/d/1d3L5CXlUMwpsWs1FRnsGFVmG18RyBRLm/view?usp=drive_link">Ver libro</a>
+    </div>
+    <div class="libro">
+        <div>
+            <img src="https://i.imgur.com/2znfwtx.png"
+                alt="Libro 3">
+            <h2>Biología Trilce</h2>
+        </div>
+        <a href="https://drive.google.com/file/d/1TUz8aqrkGbolQaa4tr1BHRHL5E2fZgB5/view?usp=drive_link">Ver libro</a>
+    </div>
+
+    
+
+    <!-- Agrega más bloques 'libro' según sea necesario -->
+
+</body>
+
+</html>
