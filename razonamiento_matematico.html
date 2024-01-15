@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razonamiento Matematico</title>
+	<link rel="stylesheet" href="estilo2.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -86,6 +88,22 @@
         }
     </style>
 
+	<style>
+        .container-menu {
+            overflow-y: auto;
+    
+            max-height: 80vh;
+    
+        }
+    
+        .cont-menu {
+            overflow-y: auto;
+    
+            max-height: 100%;
+    
+        }
+    </style>
+
 <script>
     function searchBooks() {
         var input, filter, libros, libro, a, i, txtValue;
@@ -108,6 +126,37 @@
 </script>
 </head>
 <body>
+	<header class="header">
+    
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+        </div>
+    </header>
+    <div class="capa"></div>
+    <!--	--------------->
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="algebra.html">Algebra</a>
+                <a href="trigonometria.html">Trigonometria</a>
+                <a href="geometria.html">Geometria</a>
+                <a href="aritmetica.html">Aritmetica</a>
+                <a href="fisica.html">Fisica</a>
+                <a href="quimica.html">Quimica</a>
+                <a href="razonamiento_matematico.html">Raz. Matematico</a>
+                <a href="Literatura.html">Literatura</a>
+                <a href="Lenguaje.html">Lenguaje</a>
+                <a href="Historia.html">Historia</a>
+                <a href="Filosofía.html">Filosofía</a>
+                <a href="Biología.html">Biología</a>
+                <a href="Psicología.html">Psicología</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
 
     <h1>Razonamiento Matematico</h1>
     <input type="text" id="searchInput" onkeyup="searchBooks()" placeholder="Buscar libros">
@@ -145,6 +194,15 @@
     </div>
 
     <!-- Agrega más bloques 'libro' según sea necesario -->
+
+	<script>
+        var contMenu = document.querySelector('.cont-menu');
+
+        contMenu.addEventListener('wheel', function (e) {
+            contMenu.scrollTop += e.deltaY;
+        });
+    </script> 
+
 
 </body>
 </html>
